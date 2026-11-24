@@ -1,0 +1,47 @@
+# Environment & Secrets (JANGAN PERNAH DI-COMMIT!)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials*.json
+token.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Node / Next.js (frontend)
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Data sensitif / file lokal kerja
+*.xlsx
+*.xls
+ds/data/actual/
+ds/data/*asli*
+ds/data/*real*
+ds/data/*rahasia*
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
