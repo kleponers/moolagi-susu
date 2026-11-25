@@ -1,8 +1,17 @@
+import os
 import pytest
 from fastapi.testclient import TestClient
 
-from app.db.store import MemoryStore, get_store
-from app.main import app
+# Pastikan unit test selalu berjalan di mode memory terisolasi (tidak menyentuh Supabase)
+os.environ["DATABASE_URL"] = ""
+
+from app.core.config import get_settings  # noqa: E402
+from app.db.store import MemoryStore, get_store  # noqa: E402
+
+get_settings.cache_clear()
+get_store.cache_clear()
+
+from app.main import app  # noqa: E402
 
 client = TestClient(app)
 
